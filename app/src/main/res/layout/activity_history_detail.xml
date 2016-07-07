@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bk.loancalculator.ui.HistoryDetailActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toplay"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layType"
+
+        android:layout_margin="3dp"
+        android:layout_below="@+id/toplay">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Loan Type"
+            android:id="@+id/txtType"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/spType"
+            android:entries="@array/type_arrays"
+            android:spinnerMode="dropdown"
+            android:layout_weight="0.3" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/layType"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:id="@+id/layLoan"
+        android:gravity="center_horizontal"
+        android:weightSum="1"
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KES"
+            android:id="@+id/txtLoanAmount"
+            android:layout_weight="0.7"
+            android:gravity="bottom|left|end" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtLoanAmount"
+            android:layout_weight="0.3"
+            android:hint="Enter Loan Amount"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layInterest"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/layLoan"
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="%"
+            android:id="@+id/txtInterest"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtInterest"
+            android:layout_weight="0.3"
+            android:hint="Enter Interest Rate" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layTerm"
+        android:layout_below="@+id/layInterest"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Years"
+            android:id="@+id/txtTerm"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtTerm"
+            android:layout_weight="0.3"
+            android:hint="Enter No of Terms" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layRepay"
+        android:layout_below="@+id/layTerm"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Per Year"
+            android:id="@+id/txtRepayments"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtRepayments"
+            android:layout_weight="0.3"
+            android:hint="Enter No of Repayments" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layCharge"
+        android:layout_below="@+id/layRepay"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KES"
+            android:id="@+id/txtCharges"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtCharges"
+            android:layout_weight="0.3"
+            android:hint="Enter Charges" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:weightSum="1"
+        android:id="@+id/layLifePrem"
+        android:layout_below="@+id/layCharge"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KES"
+            android:id="@+id/txtLifePrem"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtLifePrem"
+            android:layout_weight="0.3"
+            android:hint="Enter Life Premium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layHOC"
+        android:layout_below="@+id/layLifePrem"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KES"
+            android:id="@+id/txtHOC"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtHOC"
+            android:layout_weight="0.3"
+            android:hint="Enter HOC Premium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layLegal"
+        android:layout_below="@+id/layHOC"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Legal?"
+            android:id="@+id/txtLegal"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/spLegal"
+            android:entries="@array/yes_arrays"
+            android:spinnerMode="dropdown"
+            android:layout_weight="0.3" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="1"
+        android:id="@+id/layVal"
+        android:layout_below="@+id/layLegal"
+
+        android:layout_margin="3dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KES"
+            android:id="@+id/txtVal"
+            android:layout_weight="0.7"
+            android:layout_gravity="center"
+            android:gravity="bottom|left" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtVal"
+            android:layout_weight="0.3"
+            android:hint="Enter Valuation Fees" />
+    </LinearLayout>
+
+
+</RelativeLayout>

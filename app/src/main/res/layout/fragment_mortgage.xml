@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+
+        android:layout_height="fill_parent"
+        tools:context="com.bk.loancalculator.PersonalLoanFragment"
+        android:id="@+id/rl">
+
+        <TextView android:text="Calculate Installment Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtmortgage"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:textAlignment="center"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layType"
+
+            android:layout_margin="5dp"
+            android:layout_below="@+id/txtmortgage">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Loan Type"
+                android:id="@+id/txtType"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/spType"
+                android:entries="@array/type_arrays"
+                android:spinnerMode="dropdown"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView"
+                android:layout_weight="3" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/layType"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:id="@+id/layLoan"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:weightSum="7"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Installment Amount"
+                android:id="@+id/txtLoanAmount"
+                android:layout_weight="2"
+                android:gravity="bottom|left|end" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtLoanAmount"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="$"
+                android:id="@+id/textView2"
+                android:layout_weight="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layInterest"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layLoan">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Interest Rate"
+                android:id="@+id/txtInterest"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtInterest"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="%"
+                android:id="@+id/textView3"
+                android:layout_weight="3" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layTerm"
+            android:layout_below="@+id/layInterest"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Years"
+                android:id="@+id/txtTerm"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/edtTerm"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView4"
+                android:layout_weight="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layRepay"
+            android:layout_below="@+id/layTerm"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Payments"
+                android:id="@+id/txtRepayments"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/edtRepayments"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView5"
+                android:layout_weight="3"
+                android:text="Per year" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layCharge"
+            android:layout_below="@+id/layRepay"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Establishment Rate"
+                android:id="@+id/txtCharges"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtCharges"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView6"
+                android:layout_weight="3"
+                android:text="%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layLifePrem"
+            android:layout_below="@+id/layCharge"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Life Premium"
+                android:id="@+id/txtLifePrem"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtLifePrem"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView7"
+                android:layout_weight="3"
+                android:text="Per year" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layHOC"
+            android:layout_below="@+id/layLifePrem"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="HOC Premium"
+                android:id="@+id/txtHOC"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtHOC"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView8"
+                android:layout_weight="3"
+                android:text="Per year" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layLegal"
+            android:layout_below="@+id/layHOC"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Legal Fee"
+                android:id="@+id/txtLegal"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtLegal"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView9"
+                android:layout_weight="3"
+                android:text="$" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layVal"
+            android:layout_below="@+id/layLegal"
+
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Valuation Rate"
+                android:id="@+id/txtVal"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtVal"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView10"
+                android:layout_weight="3"
+                android:text="%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layIncome"
+            android:layout_below="@+id/layVal"
+            android:layout_margin="5dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Gross Monthly Income"
+                android:id="@+id/textView14"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtMonthlyIncome"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView15"
+                android:layout_weight="3"
+                android:text="$" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layMonthRepay"
+            android:layout_below="@+id/layIncome"
+            android:layout_margin="5dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Loan Mon Repayment"
+                android:id="@+id/textView16"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="bottom|left" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:ems="10"
+                android:id="@+id/edtLoanRepayMon"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView17"
+                android:layout_weight="3"
+                android:text="$" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="7"
+            android:id="@+id/layVal2"
+            android:layout_below="@+id/layMonthRepay"
+
+            android:layout_margin="5dp">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CALCULATE"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#ffffffff"
+                android:id="@+id/btnCalc"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:text="CALCULATE INSTALLMENT"
+            android:id="@+id/btnCalculate"
+            android:background="#ffffff"
+            android:textColor="#ffffffff"
+            android:layout_height="40dp"
+
+            android:layout_below="@+id/layVal2"
+            />
+
+
+
+    </RelativeLayout>
+</ScrollView>
